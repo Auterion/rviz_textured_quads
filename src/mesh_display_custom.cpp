@@ -728,7 +728,7 @@ void MeshDisplayCustom::processImage(int index, const sensor_msgs::Image& msg)
   cv_bridge::CvImagePtr cv_ptr;
 
   // simply converting every image to RGBA
-  cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::RGBA8);
+  cv_ptr = cv_bridge::toCvCopy(msg, msg.encoding);
 
   // update image alpha
   // for(int i = 0; i < cv_ptr->image.rows; i++)
